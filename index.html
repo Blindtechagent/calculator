@@ -100,30 +100,32 @@ button:nth-child(20){
 					</div>
 				</div>
 				<div id="keyboard">
-					<button class="operator" id="backspace">Back <br> space</button>
-			<button class="operator" id="clear">Clear all</button>
-					<button class="operator" id="%">%</button>
-					<button class="operator" id="/">&#247;</button>
-					<button class="number" id="1">1</button>
-					<button class="number" id="2">2</button>
-					<button class="number" id="3">3</button>
-					<button class="operator" id="*">&times;</button>
-					<button class="number" id="4">4</button>
-					<button class="number" id="5">5</button>
-					<button class="number" id="6">6</button>
-					<button class="operator" id="-">-</button>
-					<button class="number" id="7">7</button>
-					<button class="number" id="8">8</button>
-					<button class="number" id="9">9</button>
-					<button class="operator" id="+">+</button>
+					<button class="operator" id="backspace" onclick="cut()">Back <br> space</button>
+			<button class="operator" id="clear" onclick="clear()">Clear all</button>
+					<button class="operator" id="%" onclick="simble()">%</button>
+					<button class="operator" id="/" onclick="simble()">&#247;</button>
+					<button class="number" id="1" onclick="number()">1</button>
+					<button class="number" id="2" onclick="number()">2</button>
+					<button class="number" id="3" onclick="number()">3</button>
+					<button class="operator" id="*" onclick="simble()">&times;</button>
+					<button class="number" id="4" onclick="number()">4</button>
+					<button class="number" id="5" onclick="number()">5</button>
+					<button class="number" id="6" onclick="number()">6</button>
+					<button class="operator" id="-" onclick="simble()">-</button>
+					<button class="number" id="7" onclick="number()">7</button>
+					<button class="number" id="8" onclick="number()">8</button>
+					<button class="number" id="9" onclick="number()">9</button>
+					<button class="operator" id="+" onclick="simble()">+</button>
 					
-					<button class="number" id="0">0</button>
+					<button class="number" id="0" onclick="number()">0</button>
 					
-<button style="width:150px;" class="operator" id="=">=</button>
+<button style="width:160px;" class="operator" id="=" onclick="equals()">=</button>
 				</div>
 			</div>
 		</div>
-<p class="last">This calculator is created by </p> <br>  <button class="contact" style="background:#7FFF00;"onclick="window.location.href='https://wa.me/919315548418?text=nice%20calculator'">Pawan kumar</button> 		<script> 
+<p class="last">This calculator is created by </p> <br>  <button class="contact" style="background:#7FFF00;"onclick="window.location.href='https://wa.me/919315548418?text=nice%20calculator'">Pawan kumar</button> 
+<div id="sound" style="display:none;"></div>
+<script> 
 function getHistory(){
 	return document.getElementById("history-value").innerText;
 }
@@ -202,5 +204,51 @@ for(var i =0;i<number.length;i++){
 		}
 	});
 }		</script>
-	</body>
+<script>
+function number() {
+var mp3 = '<source src="number.mp3" type="audio/mpeg">';
+                document.getElementById("sound").innerHTML = 
+                '<audio autoplay="autoplay">' + mp3 + "</audio>";
+}
+
+</script>
+<script>
+function simble() {
+                var mp3 = '<source src="simble.mp3" type="audio/mpeg">';
+                document.getElementById("sound").innerHTML = 
+                '<audio autoplay="autoplay">' + mp3 + "</audio>";
+}
+
+</script>
+
+<script>
+function clear() {
+                var mp3 = '<source src="clear.mp3" type="audio/mpeg">';
+                document.getElementById("sound").innerHTML = 
+                '<audio autoplay="autoplay">' + mp3 + "</audio>";
+}
+
+</script>
+
+<script>
+function cut() {
+                var mp3 = '<source src="cut.mp3" type="audio/mpeg">';
+                document.getElementById("sound").innerHTML = 
+                '<audio autoplay="autoplay">' + mp3 + "</audio>";
+}
+
+</script>
+
+<script>
+function equals() {
+                var mp3 = '<source src="eq.mp3" type="audio/mpeg">';
+                document.getElementById("sound").innerHTML = 
+                '<audio autoplay="autoplay">' + mp3 + "</audio>";
+}
+
+</script>
+
+
+
+</body>
 </html>
